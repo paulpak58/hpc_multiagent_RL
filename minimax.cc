@@ -7,7 +7,7 @@ using namespace std;
 namespace open_spiel{
 namespace algorithms {
 namespace {
-	/*	Minmax alpha-beta algorithms
+	/*	Minimax alpha-beta algorithms
 	 *	Args:
 	 *		state: current game state
 	 *		depth: max depth for min/max search
@@ -18,7 +18,7 @@ namespace {
 	 *	Returns:
 	 *		Optimal value of sub-game starting in initial state
 	 */
-double _alpha_beta(State* state, int depth, double alpha, double bea,function<double(const State&)> value_function,Player maximizing_player,Action* best_action){
+double _alpha_beta(State* state, int depth, double alpha, double beta,function<double(const State&)> value_function,Player maximizing_player,Action* best_action){
 	if(state->IsTerminal()){
 		return state->PlayerReturn(maximizing_player);
 	}
